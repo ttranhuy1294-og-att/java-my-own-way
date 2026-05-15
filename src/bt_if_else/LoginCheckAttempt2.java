@@ -71,6 +71,7 @@ public class LoginCheckAttempt2 {
                 // end program
                 systemState = STATE_FINISHED;
             }
+
             // ===== STATE: LOGIN SUCCESS =====
             if (systemState == STATE_LOGIN_SUCCESS) {
                 // reset config
