@@ -47,9 +47,6 @@ public class PrintPrimeNumbsList {
         // range validation
         final long MIN_N = 1L;
         final long MAX_N = 1000000000L;
-        // message
-        final String ACCEPT_MESS = "YES";
-        final String REJECT_MESS = "NO";
 
         // Handle validation
         while (true) {

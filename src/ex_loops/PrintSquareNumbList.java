@@ -4,64 +4,36 @@ import java.util.Scanner;
 
 public class PrintSquareNumbList {
     public static void main(String[] args) {
-        // === Handle declaration and initialization of variables ===
+        // == Handle declarations ==
         Scanner sc = new Scanner(System.in);
-        long a, b, count = 0;
-        long start, end;
-        // const variables
-        final long MIN_SIZE = 0;
-        final long MAX_SIZE = 1_000_000_000_000_000_000L;
+        int n;
 
-        // === Handle validation of input ===
+        final int MIN_RANGE = 1;
+        final int MAX_RANGE = 10000;
 
-        // check a
+        // == Handle validation ==
+        // check n
         while (true) {
-            if (!sc.hasNextLong()) {
-                System.out.println("Invalid input. Please enter a long integer.");
-                sc.next(); // Consume the invalid input
+            if (!sc.hasNextInt()) {
+                System.out.println("Invalid input. Please enter an integer.");
+                sc.next(); // Clear the invalid input
                 continue;
             }
-
-            a = sc.nextLong();
-            if (MIN_SIZE <= a && a <= MAX_SIZE) {
+            n = sc.nextInt();
+            if (MIN_RANGE <= n && n <= MAX_RANGE) {
                 break;
             }
         }
 
-        // check b
-        while (true) {
-            if (!sc.hasNextLong()) {
-                System.out.println("Invalid input. Please enter a long integer.");
-                sc.next(); // Consume the invalid input
-                continue;
-            }
-
-            b = sc.nextLong();
-            if (a <= b && MIN_SIZE <= b && b <= MAX_SIZE) {
-                break;
+        // == Handle logic ==
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i * i);
+            if (i != n) {
+                System.out.print(" ");
             }
         }
 
-        // === Handle the main logic of the program ===
-        start = (long) Math.sqrt(a);
-        end = (long) Math.sqrt(b);
-        if (start * start < a) {
-            start++;
-        }
-
-        if (end * end > b) {
-            end--;
-        }
-
-        count = end - start + 1;
-        if (count < 0) {
-            count = 0;
-        }
-
-        // === Handle output of the program ===
-        System.out.println(count);
-
-        // === Handle closing of resources ===
+        // == Close scanner ==
         sc.close();
     }
 }
